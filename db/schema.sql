@@ -1,9 +1,9 @@
 -- create the database
-DROP DATABASE IF EXISTS employees_db;
-CREATE DATABASE employees_db;
+DROP DATABASE IF EXISTS hotel_employee_db;
+CREATE DATABASE hotel_employee_db;
 
 -- connect to the database
-USE employees_db;
+USE hotel_employee_db;
 
 -- create the tables
 CREATE TABLE department (
