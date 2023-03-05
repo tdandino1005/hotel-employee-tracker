@@ -31,7 +31,7 @@ function employeeQuestion () {
         name: 'prompt',
         message: 'What would you like to do?',
         choices: [
-            'View All Department', 
+            'View All Departments', 
             'View All Roles', 
             'View All Employees', 
             'Add A Department', 
@@ -48,23 +48,23 @@ function employeeQuestion () {
         case 'Add Employee':
             addEmployee();
             break;
-        case 'Update Employee Role':
+        case 'Update An Employee Role':
             updateRole();
             break;
         case 'View All Roles':
             viewRoles();
             break;
-        case 'Add Role':
+        case 'Add A Role':
             addRole();
             break;
         case 'View All Departments':
             viewDepartments();
             break;
-        case 'Add Department':
+        case 'Add A Department':
             addDepartment();
             break;
         case 'Log Out':
-            console.log('Good-Bye!');
+            console.log('Logged Out!');
             db.end();
             break;
     }
@@ -83,6 +83,7 @@ db.query(sql, (err, res) => {
     employeeQuestion();
 });
 };
+
 
 function viewRoles() {
 const sql = `SELECT role.id, role.title AS role, role.salary, department.name AS department FROM role INNER JOIN department ON (department.id = role.department_id);`;
@@ -108,7 +109,7 @@ db.query(sql, (err, res) => {
 });
 };
 
-// Adding
+// Function to add a department
 function addDepartment() {
 inquirer.prompt([
     {
@@ -129,6 +130,7 @@ inquirer.prompt([
 });
 };
 
+// Function to add a role
 function addRole() {
 const sql2 = `SELECT * FROM department`;
 db.query(sql2, (error, response) => {
@@ -145,12 +147,12 @@ db.query(sql2, (error, response) => {
         {
             type: 'input',
             name: 'salary',
-            message: 'What is the salary of the role?',
+            message: 'How much is the salary of the role?',
         },
         {
             type: 'list',
             name: 'department',
-            message: 'Which Department does the role belong to?',
+            message: 'Which Department does this role belong to?',
             choices: departmentList
         }
     ]).then((answers) => {
@@ -167,6 +169,7 @@ db.query(sql2, (error, response) => {
 });
 };
 
+// Function to add an employee
 function addEmployee() {
 const sql2 = `SELECT * FROM employee`;
 db.query(sql2, (error, response) => {
@@ -219,7 +222,7 @@ db.query(sql3, (error, response) => {
 });
 };
 
-// Updating
+// Function to update an employee's role
 function updateRole() {
 const sql2 = `SELECT * FROM employee`;
 db.query(sql2, (error, response) => {
