@@ -1,4 +1,3 @@
--- create the database
 DROP DATABASE IF EXISTS hotel_employee_db;
 CREATE DATABASE hotel_employee_db;
 
