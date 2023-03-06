@@ -1,7 +1,6 @@
 // Variable Definitions & Dependencies
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
-// const db = require('./db/connection');
 const consoleTable = require('console.table');
 
 // Connect to database
@@ -18,7 +17,7 @@ const db = mysql.createConnection(
 db.connect(function (err) {
     if (err) throw err;
     console.log("**************************************");
-    console.log("           EMPLOYEE TRACKER           ");
+    console.log("          EMPLOYEE TRACKER           ");
     console.log("**************************************");
     employeeQuestion();
 });
