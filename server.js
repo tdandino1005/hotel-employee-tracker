@@ -19,24 +19,24 @@ db.connect(function (err) {
     console.log("**************************************");
     console.log("          EMPLOYEE TRACKER           ");
     console.log("**************************************");
-    employeeQuestion();
+    trackerQuestion();
 });
 
 // Create a function to prompt the user with questions
-function employeeQuestion () {
+function trackerQuestion () {
     inquirer.prompt([
         {
         type: 'list',
         name: 'prompt',
         message: 'What would you like to do?',
         choices: [
-            'View All Departments', 
-            'View All Roles', 
-            'View All Employees', 
-            'Add A Department', 
+            'View All Employees',
+            'Add Employee',
+            'Update An Employee Role',
+            'View All Roles',
             'Add A Role', 
-            'Add An Employee', 
-            'Update An Employee Role', 
+            'View All Departments',
+            'Add A Department',
             'Log Out']
     }
 ]).then((answer) => {
@@ -79,7 +79,7 @@ db.query(sql, (err, res) => {
         return;
     }
     console.table(res);
-    employeeQuestion();
+    trackerQuestion();
 });
 };
 
@@ -92,7 +92,7 @@ db.query(sql, (err, res) => {
         return;
     }
     console.table(res);
-    employeeQuestion();
+    trackerQuestion();
 });
 };
 
@@ -104,7 +104,7 @@ db.query(sql, (err, res) => {
         return;
     }
     console.table(res);
-    employeeQuestion();
+    trackerQuestion();
 });
 };
 
@@ -124,7 +124,7 @@ inquirer.prompt([
             return;
         }
         console.log("Added " + answer.department + " to the database")
-        employeeQuestion();
+        trackerQuestion();
     });
 });
 };
@@ -162,7 +162,7 @@ db.query(sql2, (error, response) => {
                 return;
             }
             console.log("Added " + answers.title + " to the database")
-            employeeQuestion();
+            trackerQuestion();
         });
     });
 });
@@ -214,7 +214,7 @@ db.query(sql3, (error, response) => {
                     return;
                 }
                 console.log("Added " + answers.first + " " + answers.last + " to the database")
-                employeeQuestion();
+                trackerQuestion();
             });
         });
     });
@@ -252,7 +252,7 @@ db.query(sql2, (error, response) => {
                 type: 'list',
                 name: 'manager',
                 message: "Who will be this employee's manager?",
-                choices: employeeList
+                choices: trackerList
             },
             
         ]).then((answers) => {
@@ -263,7 +263,7 @@ db.query(sql2, (error, response) => {
                     return;
                 }
                 console.log("Employee role updated")
-                employeeQuestion();
+                trackerQuestion();
             });
         });
     });
