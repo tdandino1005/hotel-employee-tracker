@@ -40,7 +40,7 @@ function trackerQuestion () {
             'Log Out']
     }
 ]).then((answer) => {
-    switch(answer.intro) {
+    switch(answer.prompt) {
         case 'View All Employees':
             viewEmployees();
             break;
@@ -57,6 +57,7 @@ function trackerQuestion () {
             addRole();
             break;
         case 'View All Departments':
+        
             viewDepartments();
             break;
         case 'Add A Department':
