@@ -29,9 +29,8 @@ This is an hotel employee database for managing's a system's database.
 - Answer prompts in terminal through Node JS to view, add, and update database.
 
 
-Link to Video of Walkthrough for Demonstration:
+Video is below of Walkthrough Demo:
 
-![Video] 
 
 
 https://user-images.githubusercontent.com/114967217/226239410-18da0eca-7fa5-4b74-863e-b9759d0aa259.mp4
