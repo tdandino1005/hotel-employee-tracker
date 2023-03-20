@@ -31,7 +31,11 @@ This is an hotel employee database for managing's a system's database.
 
 Link to Video of Walkthrough for Demonstration:
 
-![Video](video1938467208.mp4)
+![Video] 
+
+
+https://user-images.githubusercontent.com/114967217/226239410-18da0eca-7fa5-4b74-863e-b9759d0aa259.mp4
+
 
 
 
